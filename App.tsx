@@ -1,13 +1,33 @@
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { HomeScreen } from './screens/HomeScreen';
-import { NewTodoScreen } from './screens/NewTodoScreen';
-import React from 'react';
+import { NewTodoScreen } from './src/screens/NewTodoScreen';
+import React, { useState } from 'react';
+import 'react-native-get-random-values';
+import HomeScreen from './src/screens/HomeScreen';
+import { Todo } from './src/storage/DataStorage';
+import * as DataStorage from './src/storage/DataStorage';
+import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 
-const Stack = createNativeStackNavigator();
+
+
+type RootStackParamList = {
+  Home: {
+    todo: string
+  };
+  NewTodo: {
+    title: string
+  };
+};
+
+
+export type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const App = () => {
+
+  useState()
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
@@ -17,5 +37,6 @@ const App = () => {
     </NavigationContainer>
   );
 }
+
 
 export default App;
