@@ -18,7 +18,7 @@ export const NewTodoScreen = ({ route, navigation }: Props) => {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.titleText}>Task Name</Text>
+            <Text style={[styles.titleText, styles.titleList]}>Task Name</Text>
             <TextInput
                 style={styles.input}
                 onChangeText={onChangeText}

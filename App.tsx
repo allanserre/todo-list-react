@@ -9,8 +9,6 @@ import { Todo } from './src/storage/DataStorage';
 import * as DataStorage from './src/storage/DataStorage';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 
-
-
 type RootStackParamList = {
   Home: {
     todo: string
@@ -19,7 +17,6 @@ type RootStackParamList = {
     title: string
   };
 };
-
 
 export type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
 
